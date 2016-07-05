@@ -15,7 +15,7 @@ config :places, Places.Endpoint,
   http: [port: {:system, "PORT"}],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   url: [host: "young-earth-12318.herokuapp.com", port: 443],
-  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 config :places, Places.Repo,
   adapter: Ecto.Adapters.Postgres,
