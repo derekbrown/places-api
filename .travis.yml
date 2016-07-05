@@ -1,0 +1,17 @@
+language: elixir
+elixir:
+- 1.2
+otp_release:
+- 18.2
+sudo: false
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database places_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: YwVl3LKigsmlBXwLCLzppHO6aJ0wZCyS0LmCMYGnyOavGc2w4n2JgW3UNxnsEt/5fudvkY1s/vbhXa9bWWotibB8RRYwajAxyo/pzMO9c8OCaIQ323mq7HCVRGfsu34gkGpIKsOmMfY0+/TATrJCASxeY2zeIjpH5b7WU+A30dpQ/ZybCpxlrZiUSSgJqxb4BSgBvoJbhybKFbXAfN65+N09KMIOjEEhp8c2Rs0D6l8OCTDI51lNCbPbIeyT5UEcKJNNmB0C1hi/YpSTBAxGExF1bVncDcYICpRYt5JPTwKC/MqUU5wZRlffx1nDzTFGfDVaC02Ye2ETVCpGdnV7jMcwNQQdQFNRKH1vjIQfgH54y0ICMGtOWUO1hT7lEb3MJn65YhpEgfeX49kTzqCl2jsC9MRRf+riTQER0+Bc8TTO4sJpolnUXw4x9OQKEMnWGu1r8chjEcUJ/Bb93KuN6EiMY415Ez8zHu6JUd5vb+dyGdMXnC0m5vGtevdsqA7K7eBoykyLqgWP38FOYXzzNwj5PxIBRsoQ5bloOjsUbXKgXGzb38HMxkj/0HTobV/ObbxzQd1LWYTy3wWNYziasbzeQS9co4TULy2lfL/SBkmlxvBV/KK45MFNlbJ9Tzp+KpcRqEfj81DzxxxrqKsJU0LJiqUZG+lZDYLdRBggRtc=
+  app: young-earth-12318
+  on:
+    repo: derekbrown/places-api
