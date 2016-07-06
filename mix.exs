@@ -19,7 +19,7 @@ defmodule Places.Mixfile do
   def application do
     [mod: {Places, []},
      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -34,10 +34,14 @@ defmodule Places.Mixfile do
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.0"},
      {:postgrex, ">= 0.0.0"},
+     {:poison, "~> 2.0", override: true},
+     {:ecto, "~> 2.0", override: true},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:cors_plug, "~> 1.1"},
-     {:guardian, "~> 0.10.0"}
+     {:guardian, "~> 0.10.0"},
+     {:ja_serializer, "~> 0.8.1"},
+     {:comeonin, "~> 2.4"}
     ]
   end
 
