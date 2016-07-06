@@ -7,8 +7,14 @@ defmodule Places.ErrorView do
     |> JaSerializer.ErrorSerializer.format
   end
 
+  def render("403.json", _assigns) do
+    %{title: "Forbidden", code: 403}
+    |> JaSerializer.ErrorSerializer.format
+  end
+
   def render("404.json", _assigns) do
-    %{errors: %{detail: "Page not found"}}
+    %{title: "Page Not Found", code: 404}
+    |> JaSerializer.ErrorSerializer.format
   end
 
   def render("500.json", _assigns) do
