@@ -1,4 +1,4 @@
-# Places
+# Places - App
 
 To start your Phoenix app:
 
