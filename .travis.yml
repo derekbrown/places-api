@@ -1,4 +1,4 @@
-language: elixir
+`language: elixir
 elixir:
 - 1.2
 otp_release:
@@ -7,7 +7,7 @@ sudo: false
 addons:
   postgresql: '9.4'
 before_script:
-- psql -c 'create database places_test;' -U postgres
+- psql -c 'create database places;' -U places
 deploy:
   provider: heroku
   api_key:
