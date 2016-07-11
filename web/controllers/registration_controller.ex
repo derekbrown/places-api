@@ -15,7 +15,7 @@ defmodule Places.RegistrationController do
       {:ok, user} ->
         conn
         |> put_status(:created)
-        |> render(Places.UserView, "index.json", user: user)
+        |> render(Places.UserView, "show.json", user: user)
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)

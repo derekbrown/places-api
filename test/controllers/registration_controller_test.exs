@@ -4,15 +4,18 @@ defmodule Places.RegistrationControllerTest do
   alias Places.User
 
   @valid_attrs %{
-    email: "test@places.com",
-    password: "Passw0rd1",
-    password_confirmation: "Passw0rd1"
+    "email": "test@places.com",
+    "password": "Passw0rd1",
+    "password-confirmation": "Passw0rd1"
   }
 
   @invalid_attrs %{}
 
   setup %{conn: conn} do
-    {:ok, conn: put_req_header(conn, "accept", "application/json")}
+    conn = conn
+    |> put_req_header("content-type", "application/json")
+    |> put_req_header("accept", "application/json")
+    {:ok, conn: conn}
   end
 
   test "creates and renders resource when data is valid", %{conn: conn} do

@@ -6,6 +6,7 @@ defmodule Places.User do
     field :password_hash, :string
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
+    has_many :rooms, Places.Room
     timestamps
   end
 
@@ -18,6 +19,7 @@ defmodule Places.User do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> cast_assoc(:rooms, required: false)
     |> validate_format(:email, ~r/@/)
     |> validate_length(:password, min: 8)
     |> validate_confirmation(:password)
