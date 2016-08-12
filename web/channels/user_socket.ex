@@ -1,8 +1,8 @@
-defmodule Places.UserSocket do
+defmodule Savor.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", Places.RoomChannel
+  # channel "room:*", Savor.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -30,7 +30,7 @@ defmodule Places.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     Places.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
+  #     Savor.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

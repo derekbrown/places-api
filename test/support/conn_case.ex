@@ -1,4 +1,4 @@
-defmodule Places.ConnCase do
+defmodule Savor.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,23 +20,23 @@ defmodule Places.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Places.Repo
+      alias Savor.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import Places.Router.Helpers
+      import Savor.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Places.Endpoint
+      @endpoint Savor.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Places.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Savor.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Places.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Savor.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

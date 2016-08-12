@@ -1,5 +1,5 @@
-defmodule Places.RoomView do
-  use Places.Web, :view
+defmodule Savor.RoomView do
+  use Savor.Web, :view
   use JaSerializer.PhoenixView
 
   attributes [:name]

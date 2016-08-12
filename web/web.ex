@@ -1,12 +1,12 @@
-defmodule Places.Web do
+defmodule Savor.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use Places.Web, :controller
-      use Places.Web, :view
+      use Savor.Web, :controller
+      use Savor.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule Places.Web do
     quote do
       use Phoenix.Controller
 
-      alias Places.Repo
+      alias Savor.Repo
       import Ecto
       import Ecto.Query
 
-      import Places.Router.Helpers
-      import Places.Gettext
+      import Savor.Router.Helpers
+      import Savor.Gettext
     end
   end
 
@@ -46,9 +46,9 @@ defmodule Places.Web do
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
 
-      import Places.Router.Helpers
-      import Places.ErrorHelpers
-      import Places.Gettext
+      import Savor.Router.Helpers
+      import Savor.ErrorHelpers
+      import Savor.Gettext
     end
   end
 
@@ -62,10 +62,10 @@ defmodule Places.Web do
     quote do
       use Phoenix.Channel
 
-      alias Places.Repo
+      alias Savor.Repo
       import Ecto
       import Ecto.Query
-      import Places.Gettext
+      import Savor.Gettext
     end
   end
 

@@ -1,16 +1,16 @@
-defmodule Places.SessionController do
-  use Places.Web, :controller
+defmodule Savor.SessionController do
+  use Savor.Web, :controller
 
   import Ecto.Query, only: [where: 2]
   import Comeonin.Bcrypt
   import Logger
 
-  alias Places.User
+  alias Savor.User
 
   def create(conn, %{"grant_type" => "password", "username" => username, "password" => password}) do
     try do
       user = User
-      |> where(email: ^username)
+      |> where(username: ^username)
       |> Repo.one!
       cond do
         checkpw(password, user.password_hash) ->
@@ -23,7 +23,7 @@ defmodule Places.SessionController do
           Logger.error "User " <> username <> " just failed to login"
           conn
           |> put_status(401)
-          |> render(Places.ErrorView, "401.json")
+          |> render(Savor.ErrorView, "401.json")
       end
 
     rescue
@@ -32,7 +32,7 @@ defmodule Places.SessionController do
         Logger.error "Unexpected error while attempting to login user" <> username
         conn
         |> put_status(401)
-        |> render(Places.ErrorView, "401.json")
+        |> render(Savor.ErrorView, "401.json")
     end
   end
 

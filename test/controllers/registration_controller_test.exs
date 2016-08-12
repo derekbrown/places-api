@@ -1,10 +1,10 @@
-defmodule Places.RegistrationControllerTest do
-  use Places.ConnCase
+defmodule Savor.RegistrationControllerTest do
+  use Savor.ConnCase
 
-  alias Places.User
+  alias Savor.User
 
   @valid_attrs %{
-    "email": "test@places.com",
+    "email": "test@savor.com",
     "password": "Passw0rd1",
     "password-confirmation": "Passw0rd1"
   }

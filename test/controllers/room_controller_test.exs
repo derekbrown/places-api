@@ -1,23 +1,23 @@
-defmodule Places.RoomControllerTest do
-  use Places.ConnCase
+defmodule Savor.RoomControllerTest do
+  use Savor.ConnCase
 
-  alias Places.Room
+  alias Savor.Room
   @valid_attrs %{name: "some content"}
   @invalid_attrs %{}
 
   defp create_test_rooms(user) do
     Enum.each ["first room", "second room", "third room"], fn name ->
-      Repo.insert! %Places.Room{owner_id: user.id, name: name}
+      Repo.insert! %Savor.Room{owner_id: user.id, name: name}
     end
 
-    other_user = Repo.insert! %Places.User{}
+    other_user = Repo.insert! %Savor.User{}
     Enum.each ["fourth room", "fifth room"], fn name ->
-      Repo.insert! %Places.Room{owner_id: other_user.id, name: name}
+      Repo.insert! %Savor.Room{owner_id: other_user.id, name: name}
     end
   end
 
   setup %{conn: conn} do
-    user = Repo.insert! %Places.User{}
+    user = Repo.insert! %Savor.User{}
     {:ok, jwt, _ } = Guardian.encode_and_sign(user, :token)
     conn = conn
     |> put_req_header("content-type", "application/vnd.api+json")

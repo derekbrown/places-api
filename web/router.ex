@@ -1,5 +1,5 @@
-defmodule Places.Router do
-  use Places.Web, :router
+defmodule Savor.Router do
+  use Savor.Web, :router
 
   pipeline :api do
     plug :accepts, ["json", "json-api"]
@@ -13,19 +13,17 @@ defmodule Places.Router do
     plug JaSerializer.Deserializer
   end
 
-  scope "/api", Places do
+  scope "/api", Savor do
     pipe_through :api
     post "/register", RegistrationController, :create
     post "/token", SessionController, :create, as: :login
   end
 
-  scope "/api", Places do
+  scope "/api", Savor do
     pipe_through :api_auth
     get "/user/current", UserController, :current, as: :current_user
-    resources "/users", UserController, only: [:show, :index] do
-      get "/rooms", RoomController, :index, as: :rooms
-    end
-    resources "/rooms", RoomController, except: [:new, :edit]
+    resources "/users", UserController, only: [:show, :index]
+    resources "/places", PlaceController, except: [:new, :edit]
   end
 
 end

@@ -1,8 +1,8 @@
-defmodule Places.GuardianSerializer do
+defmodule Savor.GuardianSerializer do
   @behaviour Guardian.Serializer
 
-  alias Places.Repo
-  alias Places.User
+  alias Savor.Repo
+  alias Savor.User
 
   def for_token(user =%User{}), do: {:ok, "User: #{user.id}"}
   def for_token(_), do: {:error, "Unknown resource type"}

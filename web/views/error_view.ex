@@ -1,5 +1,5 @@
-defmodule Places.ErrorView do
-  use Places.Web, :view
+defmodule Savor.ErrorView do
+  use Savor.Web, :view
   use JaSerializer.PhoenixView
 
   def render("401.json", _assigns) do

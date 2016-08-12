@@ -1,9 +1,9 @@
-defmodule Places.UserTest do
-  use Places.ModelCase
+defmodule Savor.UserTest do
+  use Savor.ModelCase
 
-  alias Places.User
+  alias Savor.User
 
-  @valid_attrs %{email: "test@places.com", password: "Passw0rd1", password_confirmation: "Passw0rd1"}
+  @valid_attrs %{email: "test@savor.com", password: "Passw0rd1", password_confirmation: "Passw0rd1"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

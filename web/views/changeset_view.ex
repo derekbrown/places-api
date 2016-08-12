@@ -1,5 +1,5 @@
-defmodule Places.ChangesetView do
-  use Places.Web, :view
+defmodule Savor.ChangesetView do
+  use Savor.Web, :view
 
   def translate_errors(changeset) do
     Ecto.Changeset.traverse_errors(changeset, &translate_error/1)

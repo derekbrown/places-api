@@ -1,4 +1,4 @@
-defmodule Places do
+defmodule Savor do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -9,23 +9,23 @@ defmodule Places do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(Places.Repo, []),
+      supervisor(Savor.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(Places.Endpoint, []),
-      # Start your own worker by calling: Places.Worker.start_link(arg1, arg2, arg3)
-      # worker(Places.Worker, [arg1, arg2, arg3]),
+      supervisor(Savor.Endpoint, []),
+      # Start your own worker by calling: Savor.Worker.start_link(arg1, arg2, arg3)
+      # worker(Savor.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Places.Supervisor]
+    opts = [strategy: :one_for_one, name: Savor.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    Places.Endpoint.config_change(changed, removed)
+    Savor.Endpoint.config_change(changed, removed)
     :ok
   end
 end

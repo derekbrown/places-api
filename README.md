@@ -1,4 +1,4 @@
-# Places - App
+# Savor - App
 
 To start your Phoenix app:
 

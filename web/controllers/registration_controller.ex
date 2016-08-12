@@ -1,13 +1,13 @@
-defmodule Places.RegistrationController do
-  use Places.Web, :controller
-  alias Places.User
+defmodule Savor.RegistrationController do
+  use Savor.Web, :controller
+  alias Savor.User
 
   def create(conn, %{"data" => %{"type" => "users",
-      "attributes" => %{"email" => email,
+      "attributes" => %{"username" => username,
         "password" => password,
         "password-confirmation" => password_confirmation}}}) do
 
-    changeset = User.changeset %User{}, %{email: email,
+    changeset = User.changeset %User{}, %{username: username,
       password_confirmation: password_confirmation,
       password: password}
 
@@ -15,11 +15,11 @@ defmodule Places.RegistrationController do
       {:ok, user} ->
         conn
         |> put_status(:created)
-        |> render(Places.UserView, "show.json", user: user)
+        |> render(Savor.UserView, "show.json", user: user)
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Places.ChangesetView, "error.json", changeset: changeset)
+        |> render(Savor.ChangesetView, "error.json", changeset: changeset)
     end
   end
 end

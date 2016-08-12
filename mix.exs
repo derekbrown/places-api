@@ -1,8 +1,8 @@
-defmodule Places.Mixfile do
+defmodule Savor.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :places,
+    [app: :savor,
      version: "0.0.1",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,9 +17,9 @@ defmodule Places.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Places, []},
+    [mod: {Savor, []},
      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin]]
+                    :phoenix_ecto, :postgrex, :comeonin, :httpoison, :ex_aws]]
   end
 
   # Specifies which paths to compile per environment.
@@ -41,7 +41,11 @@ defmodule Places.Mixfile do
      {:cors_plug, "~> 1.1"},
      {:guardian, "~> 0.10.0"},
      {:ja_serializer, "~> 0.8.1"},
-     {:comeonin, "~> 2.4"}
+     {:comeonin, "~> 2.4"},
+     {:arc, "~> 0.5.2"},
+     {:arc_ecto, "~> 0.4.3"},
+     {:httpoison, "~> 0.9.0"},
+     {:ex_aws, "~> 0.5.0"}
     ]
   end
 

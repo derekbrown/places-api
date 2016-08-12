@@ -1,4 +1,4 @@
-defmodule Places.ChannelCase do
+defmodule Savor.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,22 +20,22 @@ defmodule Places.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias Places.Repo
+      alias Savor.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
 
       # The default endpoint for testing
-      @endpoint Places.Endpoint
+      @endpoint Savor.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Places.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Savor.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Places.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Savor.Repo, {:shared, self()})
     end
 
     :ok

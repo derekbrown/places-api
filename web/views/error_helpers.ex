@@ -1,4 +1,4 @@
-defmodule Places.ErrorHelpers do
+defmodule Savor.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -21,9 +21,9 @@ defmodule Places.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(Places.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(Savor.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(Places.Gettext, "errors", msg, opts)
+      Gettext.dgettext(Savor.Gettext, "errors", msg, opts)
     end
   end
 end

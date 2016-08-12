@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :places, Places.Endpoint,
+config :savor, Savor.Endpoint,
   http: [port: 4000],
   code_reloader: true,
   check_origin: false,
@@ -21,10 +21,10 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :places, Places.Repo,
+config :savor, Savor.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "places",
+  username: "savor",
   password: "",
-  database: "places",
+  database: "savor",
   hostname: "localhost",
   pool_size: 10

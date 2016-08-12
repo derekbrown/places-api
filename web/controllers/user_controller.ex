@@ -1,8 +1,8 @@
-defmodule Places.UserController do
-  use Places.Web, :controller
+defmodule Savor.UserController do
+  use Savor.Web, :controller
 
-  alias Places.User
-  plug Guardian.Plug.EnsureAuthenticated, handler: Places.AuthErrorHandler
+  alias Savor.User
+  plug Guardian.Plug.EnsureAuthenticated, handler: Savor.AuthErrorHandler
 
   def index(conn, _params) do
     users = Repo.all(User)
@@ -19,6 +19,6 @@ defmodule Places.UserController do
     |> Guardian.Plug.current_resource
 
     conn
-    |> render(Places.UserView, "show.json", data: user)
+    |> render(Savor.UserView, "show.json", data: user)
   end
 end

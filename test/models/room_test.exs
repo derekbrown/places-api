@@ -1,7 +1,7 @@
-defmodule Places.RoomTest do
-  use Places.ModelCase
+defmodule Savor.RoomTest do
+  use Savor.ModelCase
 
-  alias Places.Room
+  alias Savor.Room
 
   @valid_attrs %{name: "some content"}
   @invalid_attrs %{}
